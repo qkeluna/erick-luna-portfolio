@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  /* Prevent layout shift when modal opens */
+  html {
+    scrollbar-gutter: stable;
+  }
+  
+  /* Smooth modal transitions */
+  [data-slot="modal-wrapper"] {
+    will-change: transform, opacity;
+  }
+  
+  /* Optimize image gallery performance */
+  [data-slot="image-gallery"] img {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+}
