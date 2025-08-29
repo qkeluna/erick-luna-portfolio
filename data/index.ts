@@ -105,57 +105,78 @@ export const DATA = {
       name: "Erick Luna",
       title: "Full Stack Developer",
       image:
-        "https://res.cloudinary.com/devq06psf/image/upload/v1750626859/chic_soba_apc1ht.png",
+        "https://res.cloudinary.com/dksu9mpmm/image/upload/v1743479572/IMG_8301_from_OneDrive_zj3yes_87370f.jpg",
       description: [
-        "I'm a creative full-stack developer with a passion for UI/UX design and clean code. I focus on building beautiful, functional, and high-performance websites and web apps.",
-        "My approach is both technical and aesthetic — I enjoy turning complex problems into elegant user experiences. I work primarily with modern frameworks like React, Vite, and TailwindCSS.",
-        "Outside of code, I enjoy motion design, product strategy, and always pushing the boundaries of front-end development.",
+        "Experienced Full Stack Team Lead with a proven track record of leading cross-functional development teams and delivering scalable web applications. I specialize in modern JavaScript frameworks, system architecture, and building high-performance digital solutions that drive business growth.",
+        "My leadership approach combines technical excellence with strategic thinking — I mentor development teams, implement CI/CD pipelines, and ensure optimal performance while maintaining code quality standards. I excel at bridging the gap between complex technical requirements and intuitive user experiences.",
+        "With expertise spanning frontend technologies like React and TypeScript to backend development and team management, I bring a comprehensive understanding of the full development lifecycle and a commitment to delivering results that exceed expectations.",
       ],
     },
     education: [
       {
-        title: "High School of Art and Design",
-        date: "2003 - 2006",
-        icon: "mdi:palette",
-        description:
-          "Focused on foundational art and visual design principles, which sparked my early interest in creative problem solving. Explored traditional media, digital illustration, and visual storytelling.",
-      },
-      {
-        title: "University of Technology and Design",
-        date: "2006 - 2010",
+        title: "Asian College, Quezon City",
+        date: "2002 - 2006",
         icon: "mdi:school",
         description:
-          "Earned a Bachelor's degree in Computer Science with a minor in Design. Gained strong skills in software development, user interface engineering, data structures, and human-computer interaction.",
-      },
-      {
-        title: "Institute of Interactive Media",
-        date: "2011 - 2012",
-        icon: "mdi:school-outline",
-        description:
-          "Completed a Master's degree specializing in UX/UI Design and Front-End Development. Merged technical expertise with visual communication to design user-centered digital products and prototypes.",
+          "Earned a Bachelor's Degree in Computer Science, building a strong foundation in software development, data structures, algorithms, and programming principles that shaped my technical career.",
       },
     ],
     experience: [
       {
-        title: "Creative Director",
-        date: "2018 - Present",
+        title: "Full Stack Team Lead",
+        date: "Aug 2024 - Present",
         icon: "mdi:briefcase",
         description:
-          "Lead creative and development teams to build digital experiences that combine innovation with user empathy. Oversee branding, UI/UX strategy, and development pipelines for tech startups and clients.",
+          "Lead cross-functional development team in designing and maintaining scalable web applications at rythmos db. Spearhead frontend and backend development initiatives, ensuring seamless system integration and optimal performance. Mentor developers, manage project timelines, and drive CI/CD pipeline adoption.",
       },
       {
-        title: "Senior UX Engineer",
-        date: "2015 - 2018",
+        title: "Front End Team Lead",
+        date: "Dec 2021 - Aug 2024",
         icon: "mdi:monitor-dashboard",
         description:
-          "Designed and implemented high-fidelity web interfaces using React, Figma, and Tailwind. Collaborated cross-functionally with developers and designers to craft intuitive user flows and interactions.",
+          "Led Frontend Development team at Media Meter Inc., championing best software development practices and delivering scalable web applications. Managed full development lifecycle, built reusable code libraries, and ensured technical feasibility of UI/UX designs.",
       },
       {
-        title: "Front-End Developer & Designer",
-        date: "2012 - 2015",
+        title: "Junior Front End Developer",
+        date: "Aug 2021 - Dec 2021",
         icon: "mdi:code-tags",
         description:
-          "Developed responsive websites and applications with a focus on accessibility, visual aesthetics, and performance. Delivered pixel-perfect interfaces from wireframes to production code.",
+          "Contributed to scalable web application development at Media Meter Inc., focusing on frontend technologies. Assisted in code reviews, documentation, and testing while collaborating with team members to implement UI/UX designs.",
+      },
+      {
+        title: "IT Administrator",
+        date: "Nov 2019 - Aug 2020",
+        icon: "mdi:server",
+        description:
+          "Managed IT infrastructure at Adonis Travel & Tourism in Dubai. Supported development and maintenance of internal systems, conducted online training, and ensured smooth operation of booking systems and rate updates.",
+      },
+      {
+        title: "Destination Supervisor - Online System",
+        date: "Sep 2014 - Oct 2019",
+        icon: "mdi:map-marker",
+        description:
+          "Managed online system for product and service updates at The Vision Destination Management in Dubai. Assisted in contracting hotels and ground suppliers, provided technical support, and maintained websites and social media platforms.",
+      },
+      {
+        title: "Client Service Executive",
+        date: "Apr 2011 - Aug 2014",
+        icon: "mdi:account-group",
+        description:
+          "Ensured clients had smooth and optimum usage of the system at Illusions Online FZ LLC in Dubai. Researched and resolved customer issues, coordinated with clients and representatives, and provided operational support for client issues post-booking.",
+      },
+      {
+        title: "System & Data Administrator",
+        date: "Feb 2009 - Mar 2011",
+        icon: "mdi:database",
+        description:
+          "Managed hotel contracts and online booking system at Kurban Tours Travel & Tourism in Dubai. Ensured accuracy and timeliness of rate and promotion updates, conducted training for teams and clients, and maintained system operations.",
+      },
+      {
+        title: "Software Programmer",
+        date: "Aug 2006 - Dec 2008",
+        icon: "mdi:code-braces",
+        description:
+          "Developed a Warehouse Monitoring System at Otto Shoes in Antipolo City, Philippines. Prepared and consolidated sales report analysis per branch, maintained and troubleshot the system, and provided user training and system deployment.",
       },
     ],
     technologies: {
@@ -459,7 +480,7 @@ export const DATA = {
     location: {
       mapSrc:
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.017947223557!2d-122.41941508468191!3d37.774929779759245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809cbb69f3ef%3A0x4c80b42c33b6a77d!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1715701234567!5m2!1sen!2sus",
-      address: "San Francisco, CA",
+      address: "Antipolo City, Rizal, Philippines",
     },
   },
   morphingTexts: {
