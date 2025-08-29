@@ -1,0 +1,17 @@
+# Git configuration for qkeluna account
+# This file documents the setup for this project
+
+[user]
+    name = qkeluna
+    email = frederick.ramo.luna@gmail.com
+
+[remote "origin"]
+    url = git@github.com-qkeluna:qkeluna/erick-luna-portfolio.git
+
+# SSH Configuration Requirements:
+# - SSH key: ~/.ssh/qkeluna/id_ed25519
+# - SSH config entry: github.com-qkeluna
+# - Pre-push hook: .git/hooks/pre-push (auto-loads SSH key)
+
+# To manually load SSH key if needed:
+# ssh-add ~/.ssh/qkeluna/id_ed25519
