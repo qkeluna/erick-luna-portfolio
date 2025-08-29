@@ -462,14 +462,14 @@ export const DATA = {
         ],
         category: "Backend Services",
         details:
-          "RESTful API supporting SaaS subscription workflows with Stripe integration, usage metering, tiered pricing, webhook handling, trial periods, and analytics. Optimized for high concurrency with Redis caching.",
+          "High-performance FastAPI backend supporting SaaS subscription workflows with Stripe integration, usage metering, tiered pricing, webhook handling, trial periods, and analytics. Leverages async/await for optimal concurrency with Redis caching and PostgreSQL.",
         github: "https://github.com",
         tech: [
-          { name: "Node.js", icon: "logos:nodejs-icon" },
+          { name: "FastAPI", icon: "simple-icons:fastapi" },
+          { name: "Python", icon: "logos:python" },
           { name: "Stripe", icon: "logos:stripe" },
           { name: "PostgreSQL", icon: "logos:postgresql" },
           { name: "Redis", icon: "logos:redis" },
-          { name: "JWT", icon: "simple-icons:jsonwebtokens" },
         ],
       },
     ],
