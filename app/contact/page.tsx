@@ -36,6 +36,7 @@ const ContactPage: React.FC = () => {
         .map(([key]) => `NEXT_PUBLIC_EMAILJS_${key.toUpperCase().replace(/([A-Z])/g, "_$1")}`);
 
       if (missingVars.length > 0) {
+        // eslint-disable-next-line no-console
         console.error("Email configuration is incomplete:", missingVars);
         addToast({
           title: "Failed to Send Message",
@@ -48,19 +49,56 @@ const ContactPage: React.FC = () => {
       }
 
       try {
+        // Validate form data
+        if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+          throw new Error('All form fields are required');
+        }
+
+        // Validate email format
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(formData.email)) {
+          throw new Error('Please enter a valid email address');
+        }
+
+        // Initialize EmailJS if not already done
+        emailjs.init(EMAIL_CONFIG.publicKey!);
+
         const templateParams = {
-          from_name: formData.name,
-          from_email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
+          from_name: formData.name.trim(),
+          from_email: formData.email.trim(),
+          subject: formData.subject.trim(),
+          message: formData.message.trim(),
+          to_name: 'Erick Luna', // Add your name as recipient
         };
 
-        await emailjs.send(
+        // eslint-disable-next-line no-console
+        console.log('Sending email with config:', {
+          serviceId: EMAIL_CONFIG.serviceId,
+          templateId: EMAIL_CONFIG.templateId,
+          publicKey: EMAIL_CONFIG.publicKey ? '[REDACTED]' : 'MISSING',
+          templateParams: {
+            ...templateParams,
+            from_email: '[REDACTED]'
+          }
+        });
+
+        // Test the configuration values
+        // eslint-disable-next-line no-console
+        console.log('Config validation:', {
+          serviceIdValid: !!EMAIL_CONFIG.serviceId && EMAIL_CONFIG.serviceId !== 'your_service_id',
+          templateIdValid: !!EMAIL_CONFIG.templateId && EMAIL_CONFIG.templateId !== 'your_template_id',
+          publicKeyValid: !!EMAIL_CONFIG.publicKey && EMAIL_CONFIG.publicKey !== 'your_public_key'
+        });
+
+        const result = await emailjs.send(
           EMAIL_CONFIG.serviceId!,
           EMAIL_CONFIG.templateId!,
           templateParams,
           EMAIL_CONFIG.publicKey!,
         );
+
+        // eslint-disable-next-line no-console
+        console.log('EmailJS Success:', result);
 
         setState((prev) => ({ ...prev, isSuccess: true }));
         addToast({
@@ -70,10 +108,56 @@ const ContactPage: React.FC = () => {
           color: "success",
         });
       } catch (error) {
-        const errorMessage =
-          error instanceof Error
-            ? error.message
-            : "Failed to send message. Please try again later.";
+        // eslint-disable-next-line no-console
+        console.error('EmailJS Error Details:', error);
+        // eslint-disable-next-line no-console
+        console.error('Error type:', typeof error);
+        // eslint-disable-next-line no-console
+        console.error('Error constructor:', error?.constructor?.name);
+        // eslint-disable-next-line no-console
+        console.error('Error properties:', Object.getOwnPropertyNames(error));
+        
+        // For EmailJS errors, check for common properties
+        if (error && typeof error === 'object') {
+          // eslint-disable-next-line no-console
+          console.error('Error status:', (error as any).status);
+          // eslint-disable-next-line no-console
+          console.error('Error text:', (error as any).text);
+          // eslint-disable-next-line no-console
+          console.error('Error message:', (error as any).message);
+        }
+        
+        let errorMessage = "Failed to send message. Please try again later.";
+        
+        // Handle EmailJS-specific error structure
+        if (error && typeof error === 'object') {
+          const emailError = error as any;
+          
+          if (emailError.status) {
+            switch (emailError.status) {
+              case 400:
+                errorMessage = "Invalid request. Please check if all form fields are filled correctly.";
+                break;
+              case 403:
+                errorMessage = "Access denied. Please verify your EmailJS public key and template permissions.";
+                break;
+              case 404:
+                errorMessage = "EmailJS service or template not found. Please check your configuration.";
+                break;
+              case 422:
+                errorMessage = "Invalid template parameters. Please check your EmailJS template configuration.";
+                break;
+              default:
+                errorMessage = `EmailJS error (${emailError.status}): ${emailError.text || 'Unknown error'}`;
+            }
+          } else if (emailError.text) {
+            errorMessage = emailError.text;
+          } else if (emailError.message) {
+            errorMessage = emailError.message;
+          }
+        } else if (error instanceof Error) {
+          errorMessage = error.message;
+        }
 
         setState((prev) => ({ ...prev, error: errorMessage }));
         addToast({
