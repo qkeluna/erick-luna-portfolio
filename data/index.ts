@@ -12,16 +12,16 @@ export const DATA = {
         " Specialized in creating modern digital experiences with cutting-edge technologies",
       overview: [
         {
-          name: "UI/UX Design",
-          level: 95,
-          icon: "lucide:layout-dashboard",
-          color: "primary",
-        },
-        {
           name: "Frontend Development",
-          level: 90,
+          level: 95,
           icon: "lucide:code",
           color: "secondary",
+        },
+        {
+          name: "UI/UX Design",
+          level: 90,
+          icon: "lucide:layout-dashboard",
+          color: "primary",
         },
         {
           name: "Mobile Development",
@@ -235,30 +235,30 @@ export const DATA = {
   projects: {
     sectionTitle: "Featured Projects",
     sectionDescription:
-      "A selection of my recent projects showcasing UI/UX design and development expertise",
+      "A selection of my recent projects showcasing Web Development and UI/UX design expertise",
     work: [
       {
         id: 1,
-        title: "Digital Banking App",
+        title: "Self Photo Studio Web App",
         description:
-          "A streamlined digital banking interface emphasizing clarity, speed, and intuitive design.",
-        image: "https://img.heroui.chat/image/dashboard?w=600&h=400&u=1",
+          "K Click Self Photo Studio Cainta is a professional self-service photo studio designed for stress-free, budget-friendly photoshoots, allowing clients to capture their special moments their way.",
+        image: "https://res.cloudinary.com/dksu9mpmm/image/upload/v1757497157/kclick_cainta_hero_02_mdwlld.png",
         gallery: [
-          "https://img.heroui.chat/image/dashboard?w=600&h=400&u=1",
-          "https://img.heroui.chat/image/dashboard?w=600&h=400&u=1-1",
-          "https://img.heroui.chat/image/dashboard?w=600&h=400&u=1-2",
-          "https://img.heroui.chat/image/dashboard?w=600&h=400&u=1-3",
+          "https://res.cloudinary.com/dksu9mpmm/image/upload/v1757497157/kclick_cainta_hero_02_mdwlld.png",
+          "https://res.cloudinary.com/dksu9mpmm/image/upload/v1757497406/kclick_cainta_hero_03_vkgmac.png",
+          "https://res.cloudinary.com/dksu9mpmm/image/upload/v1757497407/kclick_cainta_hero_04_bftcsw.png",
+          "https://res.cloudinary.com/dksu9mpmm/image/upload/v1757497407/kclick_cainta_hero_05_hzd7pm.png",
         ],
-        category: "Applications",
+        category: "Web Development",
         details:
-          "A feature-rich digital banking app built with React and TailwindCSS, integrating seamless animations via Framer Motion. Designed with a mobile-first approach and a modular component system powered by TypeScript and Vite.",
-        github: "https://github.com",
-        live: "https://example.com",
+          "A modern self-service photo studio web app built with a user-friendly, mobile-first design. Developed using React and TailwindCSS, it offers a seamless booking experience, dynamic content, and clear navigation. The platform features real-time session management, integrated photo package selection, and instant access to booking details. With modular components and responsive layouts, the app delivers a smooth, professional experience for individuals and groups looking to book, customize, and enjoy private photo sessions—all optimized for convenience and flexibility.",
+        github: "https://github.com/aelcode/kclick_cainta_webpage",
+        live: "https://www.kclick-cainta.studio/",
         tech: [
-          { name: "React", icon: "logos:react" },
+          { name: "NextJs", icon: "logos:nextjs-icon" },
           { name: "TailwindCSS", icon: "logos:tailwindcss-icon" },
           { name: "TypeScript", icon: "logos:typescript-icon" },
-          { name: "Expo", icon: "simple-icons:expo" },
+          // { name: "Expo", icon: "simple-icons:expo" },
         ],
       },
       {
